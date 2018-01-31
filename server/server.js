@@ -11,6 +11,7 @@ const privateKey  = fs.readFileSync(path.resolve(__dirname, './crt/privatekey.ke
 const certificate = fs.readFileSync(path.resolve(__dirname, './crt/certificate.crt'), 'utf8');
 const credentials = {key: privateKey, cert: certificate};
 
+const settings = require('./server.config');
 const router = require('../server-src/router');
 
 app.all('*', function(req, res, next){
@@ -26,3 +27,4 @@ const httpsServer = https.createServer(credentials, app);
 
 httpServer.listen(HTTP_PORT, function(){console.log("listening: ", HTTP_PORT);});
 httpsServer.listen(HTTPS_PORT, function(){console.log("listening: ", HTTPS_PORT);});
+console.log(settings.welcomeMessage);
