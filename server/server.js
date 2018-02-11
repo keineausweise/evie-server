@@ -13,6 +13,7 @@ const credentials = {key: privateKey, cert: certificate};
 const es6Renderer = require('express-es6-template-engine');
 
 const settings = require('./server.config');
+global.server_settings = settings;
 const router = require('../serverSrc/router');
 
 app.engine('html', es6Renderer);
