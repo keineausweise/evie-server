@@ -1,0 +1,44 @@
+{
+  "name": "evie-server",
+  "version": "1.0.0",
+  "description": "Server of Evie the very simple task management board.",
+  "main": "index.js",
+  "watch": {
+    "start": {
+      "patterns": [
+        "server/*",
+        "server/*/*",
+        "serverSrc/*",
+        "serverSrc/*/*"
+      ],
+      "extensions": "*"
+    }
+  },
+  "scripts": {
+    "start": "node ./server/server.js",
+    "watch": "npm-watch",
+    "build-client": "webpack --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "local-db-win": "start .\\localdev\\lounchdb.bat"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keineausweise/evie-client.git"
+  },
+  "author": "Serhii Kotyk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keineausweise/evie-client/issues"
+  },
+  "homepage": "https://github.com/keineausweise/evie-client#readme",
+  "engines" : { "node" : ">=8.9.4" },
+  "devDependencies": {
+    "npm-watch": "^0.3.0",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-es6-template-engine": "^2.0.2",
+    "mongoose": "^5.0.3"
+  }
+}
