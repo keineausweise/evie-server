@@ -31,12 +31,15 @@
     "url": "https://github.com/keineausweise/evie-client/issues"
   },
   "homepage": "https://github.com/keineausweise/evie-client#readme",
-  "engines" : { "node" : ">=8.9.4" },
+  "engines": {
+    "node": ">=8.9.4"
+  },
   "devDependencies": {
     "npm-watch": "^0.3.0",
     "webpack": "^3.10.0"
   },
   "dependencies": {
+    "deep-equal": "^1.0.1",
     "express": "^4.16.2",
     "express-es6-template-engine": "^2.0.2",
     "mongoose": "^5.0.3"

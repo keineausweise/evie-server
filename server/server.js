@@ -11,6 +11,7 @@ const privateKey  = fs.readFileSync(path.resolve(__dirname, './crt/privatekey.ke
 const certificate = fs.readFileSync(path.resolve(__dirname, './crt/certificate.crt'), 'utf8');
 const credentials = {key: privateKey, cert: certificate};
 const es6Renderer = require('express-es6-template-engine');
+const bodyParser = require('body-parser');
 
 const settings = require('./server.config');
 global.server_settings = settings;
@@ -21,6 +22,7 @@ app.set('views', path.resolve(__dirname, '../serverSrc/views'));
 app.set('view engine', 'html');
 
 app.use(express.static(path.resolve(__dirname, 'public')));
+app.use(bodyParser.json());
 app.use(router);
 
 app.get(['/', '/*'], function (req, res) {
